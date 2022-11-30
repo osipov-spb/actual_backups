@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Актуальные бэкапы
+{% endblock %}
+
+{% block body %}
+    <div class="text-center">
+
+        <main>
+
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <p class="fs-5 text-muted">Актуальные бэкапы</p>
+            </div>
+
+            <div class="col-md-5 col-lg-5 mx-auto">
+                <ul class="list-group mb-3">
+                    <div class="bd-example">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col"><p class="fs-7 text-muted">База</p></th>
+                                <th scope="col"><p class="fs-7 text-muted">Дата</p></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for element in backups %}
+                            <tr>
+                                <th scope="row">{{element.title}}</th>
+                                <td>
+                                    <p class="fs-7 text-muted">{{element.date}}</p>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </ul>
+            </div>
+
+
+        </main>
+    </div>
+
+{% endblock %}
